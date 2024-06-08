@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\TestController;
-
+use App\Http\Controllers\NewController;
 
 Route::get('testroute1', [
     FirstController::class,
@@ -48,4 +48,24 @@ Route::get('alltest', [
 Route::delete('deletetest/{id}', [
     TestController::class,
     'delete'
+]);
+
+Route::post('showTests', [
+    NewController::class,
+    'showData'
+]);
+
+Route::post('updateTests', [
+    NewController::class,
+    'updateData'
+]);
+
+Route::post('deleteTests', [
+    NewController::class,
+    'deleteData'
+]);
+
+Route::post('betweenTests', [
+    NewController::class,
+    'betweenData'
 ]);
